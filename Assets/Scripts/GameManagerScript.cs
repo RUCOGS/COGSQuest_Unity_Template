@@ -57,6 +57,11 @@ public class GameManagerScript : MonoBehaviour
             enemySpawnTimer = 0;
         }
 
+        if (gameTimer >= 10)
+        {
+            playerWins = true;
+            gameOver = true;
+        }
 
 
 
@@ -77,12 +82,11 @@ public class GameManagerScript : MonoBehaviour
     /* This function runs code that helps end the game.
      */
 
-    void EndGame()
+    public void EndGame()
     {
         //Freeze time.
         Time.timeScale = 0;
         gameEndText.gameObject.SetActive(true);
-
         if (playerWins == true)
         {
             gameEndText.text = "You Win";

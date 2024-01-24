@@ -10,6 +10,8 @@ public class PlayerMovementScript : MonoBehaviour
 
     public GameObject bulletPrefab;
 
+    public GameManagerScript gmScript;
+
     public int health;
 
     //this integer will keep track of what direction the player is facing
@@ -24,7 +26,7 @@ public class PlayerMovementScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        gmScript = GameObject.Find("GameManager").GetComponent<GameManagerScript>();
     }
 
     // Update is called once per frame
@@ -71,6 +73,13 @@ public class PlayerMovementScript : MonoBehaviour
         {
             //This is a custom function that we have created.
             Shoot();
+        }
+
+        if (health <= 0)
+        {
+            Time.timeScale = 0;
+            gmScript.playerWins = false;
+            gmScript.EndGame();
         }
 
     }

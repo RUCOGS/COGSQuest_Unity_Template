@@ -25,15 +25,20 @@ public class BulletScript : MonoBehaviour
     //This function is built into Unity. It detects whether the object has entered a collision.
     private void OnCollisionEnter2D(Collision2D collision)
     {
-
+        Debug.Log("Colliding with " +collision.gameObject.name);
 
         if (collision.gameObject.tag == "Enemy")
         {
             Destroy(collision.gameObject);
         }
 
+        else
+        {
+            Destroy(gameObject);
+        }
+
         //When the bullet collides with anything, it should disappear.
-        Destroy(gameObject);   
+         
     }
 
 }
