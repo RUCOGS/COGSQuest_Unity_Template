@@ -19,9 +19,7 @@ public class GameManagerScript : MonoBehaviour
 
     public GameObject enemyPrefab;
 
-
     public List<GameObject> enemySpawnPositions;
-
 
     public TMP_Text gameEndText;
 

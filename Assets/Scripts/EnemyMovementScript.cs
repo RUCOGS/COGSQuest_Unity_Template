@@ -23,7 +23,7 @@ public class EnemyMovementScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            //Reduce the player's health
+            collision.gameObject.GetComponent<PlayerMovementScript>().health -= 1;
             Destroy(gameObject);
         }
     }
