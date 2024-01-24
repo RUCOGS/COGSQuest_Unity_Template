@@ -26,10 +26,10 @@ public class BulletScript : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
 
-        //If we have collided with an object tagged "Player"
-        if (collision.gameObject.tag == "Player")
+
+        if (collision.gameObject.tag == "Enemy")
         {
-            collision.gameObject.GetComponent<PlayerMovementScript>().health -= damage;
+            Destroy(collision.gameObject);
         }
 
         //When the bullet collides with anything, it should disappear.

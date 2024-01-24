@@ -53,7 +53,7 @@ public class GameManagerScript : MonoBehaviour
          */
         if (enemySpawnTimer >= 5)
         {
-            Instantiate(enemyPrefab, enemySpawnPositions[UnityEngine.Random.Range(0, enemySpawnPositions.Count - 1)].transform.position, Quaternion.identity);
+            Instantiate(enemyPrefab, enemySpawnPositions[UnityEngine.Random.Range(0, enemySpawnPositions.Count)].transform.position, Quaternion.identity);
             enemySpawnTimer = 0;
         }
 

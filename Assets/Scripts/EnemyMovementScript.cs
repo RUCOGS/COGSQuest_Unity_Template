@@ -18,4 +18,13 @@ public class EnemyMovementScript : MonoBehaviour
         //Every frame, move the enemy towards the player's position by "speed"
         transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed);
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            //Reduce the player's health
+            Destroy(gameObject);
+        }
+    }
 }
