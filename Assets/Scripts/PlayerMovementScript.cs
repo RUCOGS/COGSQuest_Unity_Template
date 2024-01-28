@@ -75,20 +75,40 @@ public class PlayerMovementScript : MonoBehaviour
             Shoot();
         }
 
+
+        //If our player's health reaches zero.
         if (health <= 0)
         {
+            //This line stops time in-game.
             Time.timeScale = 0;
+
+            //This tells the GameManager that the player lost.
             gmScript.playerWins = false;
+
+            //This runs our "EndGame" custom function from the GameManagerScript.
             gmScript.EndGame();
         }
 
     }
 
 
+    /* This is a custom function. Unity gives you Start and Update and also comes with built-in ones such as GameObject.Find, GetComponent, etc.
+     * Custom functions hold code that all run when you call the function.
+     * This makes your code better organized and modular, since you can call this code whenever you want rather than rewriting it over and over.
+     */
     void Shoot()
     {
+
+        //"Instantiate" is a Unity function that takes a prefab, makes a copy of it, and places it at the position you specify
+        //"Quaternion.identity" means "do not change the rotation of the prefab"
+        //This bullet will spawn at the position of our PLAYER, since transform.position refers to the position of the object...
+        //...that this script is attached to, which in this case is the player.
         var bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
 
+
+        /* These 4 if-blocks check what direction our player is facing. There are 4 total directions: up, down, left, right.
+         * We need the bullets to go in the direction that we are facing.
+         */
         if (playerFacing == 1)
         {
             bullet.GetComponent<BulletScript>().bulletSpeed = new Vector3(0,0.01f);

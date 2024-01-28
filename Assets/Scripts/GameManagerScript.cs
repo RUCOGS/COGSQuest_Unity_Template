@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class GameManagerScript : MonoBehaviour
@@ -68,7 +69,7 @@ public class GameManagerScript : MonoBehaviour
             EndGame();
             if (Input.GetKeyDown(KeyCode.R))
             {
-                //Restart the game
+                SceneManager.LoadScene("SampleScene");
             }
         }
 
@@ -79,7 +80,6 @@ public class GameManagerScript : MonoBehaviour
 
     /* This function runs code that helps end the game.
      */
-
     public void EndGame()
     {
         //Freeze time.
@@ -87,12 +87,12 @@ public class GameManagerScript : MonoBehaviour
         gameEndText.gameObject.SetActive(true);
         if (playerWins == true)
         {
-            gameEndText.text = "You Win";
+            gameEndText.text = "You Win\nPress R to restart";
         }
 
         else
         {
-            gameEndText.text = "You Lose";
+            gameEndText.text = "You Lose\nPress R to restart";
         }
 
     }
