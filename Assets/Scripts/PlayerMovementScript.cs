@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class PlayerMovementScript : MonoBehaviour
 {
+    //Variables at the top of the class are called "static variables" or "class variables"
+    //for this template, we will be calling them class variables.
+    //let's go over what class variables we have!
+
+
 
     public Vector3 verticalMovement;
     public Vector3 horizontalMovement;
@@ -14,6 +19,10 @@ public class PlayerMovementScript : MonoBehaviour
 
     public int health;
 
+
+    
+
+
     //this integer will keep track of what direction the player is facing
     //it will store 1-4, for 4 different positions
     /* 1 = facing up
@@ -23,11 +32,22 @@ public class PlayerMovementScript : MonoBehaviour
      */
     public int playerFacing;
 
+
+
+
+
+
+
     // Start is called before the first frame update
     void Start()
     {
         gmScript = GameObject.Find("GameManager").GetComponent<GameManagerScript>();
     }
+
+
+
+
+
 
     // Update is called once per frame
     void Update()
@@ -64,6 +84,10 @@ public class PlayerMovementScript : MonoBehaviour
         }
 
 
+
+
+
+
         /* This section controls shooting bullets
          * We are using "GetKeyDown" because it is true as long as the key is PRESSED ONCE.
          * This is different from GetKey because we do not want to hold down the button and shoot infinite bullets.
@@ -76,20 +100,34 @@ public class PlayerMovementScript : MonoBehaviour
         }
 
 
+
+
+
+
+
         //If our player's health reaches zero.
         if (health <= 0)
         {
-            //This line stops time in-game.
+            //Stop the time in game.
             Time.timeScale = 0;
 
-            //This tells the GameManager that the player lost.
+            //Change the "playerWins" variable inside of the GameManagerScript to "false"
+            //our player died, so they did not win.
             gmScript.playerWins = false;
 
-            //This runs our "EndGame" custom function from the GameManagerScript.
+            //Run the "EndGame" function inside of the GameManagerScript.
             gmScript.EndGame();
         }
 
+
+
+
+
     }
+
+
+
+
 
 
     /* This is a custom function. Unity gives you Start and Update and also comes with built-in ones such as GameObject.Find, GetComponent, etc.
@@ -104,6 +142,8 @@ public class PlayerMovementScript : MonoBehaviour
         //This bullet will spawn at the position of our PLAYER, since transform.position refers to the position of the object...
         //...that this script is attached to, which in this case is the player.
         var bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+
+
 
 
         /* These 4 if-blocks check what direction our player is facing. There are 4 total directions: up, down, left, right.
@@ -125,6 +165,10 @@ public class PlayerMovementScript : MonoBehaviour
         {
             bullet.GetComponent<BulletScript>().bulletSpeed = new Vector3(-0.01f, 0);
         }
+
+
+
+
 
 
         

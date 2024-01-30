@@ -27,17 +27,19 @@ public class BulletScript : MonoBehaviour
     {
         Debug.Log("Colliding with " +collision.gameObject.name);
 
+        //This if-statement will evaluate the tag of the object that we are colliding with.
         if (collision.gameObject.tag == "Enemy")
         {
+            //Destroy the object that our bullet is COLLIDING with.
             Destroy(collision.gameObject);
+            
         }
-
-        else
-        {
-            Destroy(gameObject);
-        }
-
+        
         //When the bullet collides with anything, it should disappear.
+        Destroy(gameObject);
+        
+
+        
          
     }
 
