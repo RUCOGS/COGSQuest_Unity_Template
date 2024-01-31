@@ -161,7 +161,7 @@ public class GameManagerScript : MonoBehaviour
         //if the if-statement evaluates to false
         else
         {
-            //change the gameEndTex to say "You lose!"
+            //change the gameEndText to say "You lose!"
             gameEndText.text = "You Lose\nPress R to restart";
         }
 

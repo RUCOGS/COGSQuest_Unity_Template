@@ -126,7 +126,7 @@ public class PlayerMovementScript : MonoBehaviour
 
 
 
-        //If our player's health reaches zero.
+        //If our player's health reaches zero or lower.
         if (health <= 0)
         {
             //Stop the time in game.
