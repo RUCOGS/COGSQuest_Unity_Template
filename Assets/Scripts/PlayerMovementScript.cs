@@ -4,19 +4,37 @@ using UnityEngine;
 
 public class PlayerMovementScript : MonoBehaviour
 {
+
+    //<---SECTION A: CLASS VARIABLES--->
+
     //Variables at the top of the class are called "static variables" or "class variables"
     //for this template, we will be calling them class variables.
     //let's go over what class variables we have!
 
 
-
+    /* These are our Vector3 variables. Vector3s store 3 floats: an x, y, and z.
+     * verticalMovement is the vector for our vertical (up and down) movement on the Y-Axis
+     * horizontalMovement is the vector for our horizontal (left and right) movement on the X-Axis
+     */
     public Vector3 verticalMovement;
     public Vector3 horizontalMovement;
 
+
+
+    //This GameObject stores our bullet prefab so that our player can spawn bullets.
     public GameObject bulletPrefab;
 
+
+    /* This is a reference to our GameManagerScript
+     * This allows us to change the class variables inside of that script FROM this script.
+     * We can also call methods from that script within this script.
+     */
     public GameManagerScript gmScript;
 
+
+
+    //This integer variables keeps track of our player's health.
+    //If this int reaches 0, our player dies and we lose the game.
     public int health;
 
 
@@ -35,18 +53,21 @@ public class PlayerMovementScript : MonoBehaviour
 
 
 
-
+    //<---SECTION B: THE START FUNCTION--->
 
 
     // Start is called before the first frame update
     void Start()
     {
+        //This line gets the GameManager OBJECT and then gets the GameManagerScript COMPONENT attached to it.
+        //Remember: Scripts are COMPONENTS that must be attached to GAMEOBJECTS.
         gmScript = GameObject.Find("GameManager").GetComponent<GameManagerScript>();
     }
 
 
 
 
+    //<---SECTION C: THE UPDATE FUNCTION--->
 
 
     // Update is called once per frame
@@ -95,7 +116,7 @@ public class PlayerMovementScript : MonoBehaviour
          */
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            //This is a custom function that we have created.
+            //Call the custom Shoot method.
             Shoot();
         }
 
