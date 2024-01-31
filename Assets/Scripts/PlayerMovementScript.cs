@@ -59,9 +59,12 @@ public class PlayerMovementScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+
         //This line gets the GameManager OBJECT and then gets the GameManagerScript COMPONENT attached to it.
         //Remember: Scripts are COMPONENTS that must be attached to GAMEOBJECTS.
-        gmScript = GameObject.Find("GameManager").GetComponent<GameManagerScript>();
+        //TODO
+
     }
 
 
@@ -88,20 +91,17 @@ public class PlayerMovementScript : MonoBehaviour
 
         if (Input.GetKey(KeyCode.S))
         {
-            transform.position -= verticalMovement;
-            playerFacing = 2;
+            //TODO
         }
 
         if (Input.GetKey(KeyCode.D))
         {
-            transform.position += horizontalMovement;
-            playerFacing = 3;
+            //TODO
         }
 
         if (Input.GetKey(KeyCode.A))
         {
-            transform.position -= horizontalMovement;
-            playerFacing = 4;
+            //TODO
         }
 
 
@@ -117,7 +117,7 @@ public class PlayerMovementScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             //Call the custom Shoot method.
-            Shoot();
+            //TODO
         }
 
 
@@ -130,14 +130,14 @@ public class PlayerMovementScript : MonoBehaviour
         if (health <= 0)
         {
             //Stop the time in game.
-            Time.timeScale = 0;
+            //TODO
 
             //Change the "playerWins" variable inside of the GameManagerScript to "false"
             //our player died, so they did not win.
-            gmScript.playerWins = false;
+            //TODO
 
             //Run the "EndGame" function inside of the GameManagerScript.
-            gmScript.EndGame();
+            //TODO
         }
 
 
@@ -172,19 +172,19 @@ public class PlayerMovementScript : MonoBehaviour
          */
         if (playerFacing == 1)
         {
-            bullet.GetComponent<BulletScript>().bulletSpeed = new Vector3(0,0.01f);
+            bullet.GetComponent<BulletScript>().bulletSpeed = new Vector3(0 , 0.01f , 0);
         }
         else if (playerFacing == 2)
         {
-            bullet.GetComponent<BulletScript>().bulletSpeed = new Vector3(0, -0.01f);
+            //TODO
         }
         else if (playerFacing == 3)
         {
-            bullet.GetComponent<BulletScript>().bulletSpeed = new Vector3(0.01f, 0);
+            //TODO
         }
         else if (playerFacing == 4)
         {
-            bullet.GetComponent<BulletScript>().bulletSpeed = new Vector3(-0.01f, 0);
+            //TODO
         }
 
 
@@ -192,7 +192,7 @@ public class PlayerMovementScript : MonoBehaviour
 
 
 
-        
+
     }
 
 }
