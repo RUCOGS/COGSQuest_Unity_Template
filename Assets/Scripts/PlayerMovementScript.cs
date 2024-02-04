@@ -89,17 +89,21 @@ public class PlayerMovementScript : MonoBehaviour
             playerFacing = 1;
         }
 
+        //S Key subtracts verticalMovement from our position and changes our playerFacing.
         if (Input.GetKey(KeyCode.S))
         {
             //TODO
         }
 
-        if (Input.GetKey(KeyCode.D))
+
+        //D Key adds horizontalMovement from our position and changes our playerFacing.
+        if (//TODO)
         {
             //TODO
         }
 
-        if (Input.GetKey(KeyCode.A))
+        //A Key subtracts horizontalMovement from our position and changes our playerFacing.
+        if (//TODO)
         {
             //TODO
         }
@@ -114,7 +118,9 @@ public class PlayerMovementScript : MonoBehaviour
          * This is different from GetKey because we do not want to hold down the button and shoot infinite bullets.
          * You can do that if you like, but you would have to implement a short cooldown between shots.
          */
-        if (Input.GetKeyDown(KeyCode.Space))
+
+        //Check using GetKeyDown if the Spacebar has been pressed
+        if (//TODO)
         {
             //Call the custom Shoot method.
             //TODO
@@ -127,7 +133,7 @@ public class PlayerMovementScript : MonoBehaviour
 
 
         //If our player's health reaches zero or lower.
-        if (health <= 0)
+        if (//TODO)
         {
             //Stop the time in game.
             //TODO
@@ -174,17 +180,17 @@ public class PlayerMovementScript : MonoBehaviour
         {
             bullet.GetComponent<BulletScript>().bulletSpeed = new Vector3(0 , 0.01f , 0);
         }
-        else if (playerFacing == 2)
+        else if (//TODO)
         {
-            //TODO
+            bullet.GetComponent<BulletScript>().bulletSpeed = new Vector3(0, -0.01f, 0);
         }
-        else if (playerFacing == 3)
+        else if (//TODO)
         {
-            //TODO
+            bullet.GetComponent<BulletScript>().bulletSpeed = new Vector3(0.01f, 0, 0);
         }
-        else if (playerFacing == 4)
+        else if (//TODO)
         {
-            //TODO
+            bullet.GetComponent<BulletScript>().bulletSpeed = new Vector3(-0.01f, 0, 0);
         }
 
 

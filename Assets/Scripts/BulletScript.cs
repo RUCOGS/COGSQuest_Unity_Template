@@ -25,7 +25,7 @@ public class BulletScript : MonoBehaviour
     {
 
         //Move the bullet's position by bulletSpeed every frame.
-        transform.position += bulletSpeed;
+        //TODO
     }
 
 

@@ -29,7 +29,9 @@ public class GameManagerScript : MonoBehaviour
      * playerWins holds whether our player has won or lost the game after it ends.
      */
     public bool gameOver;
-    public bool playerWins;
+
+    //Now you try creating a bool named playerWins!
+    //TODO
 
 
     //This GameObject variable holds our enemy prefab object, that we will then spawn in.
@@ -58,11 +60,11 @@ public class GameManagerScript : MonoBehaviour
     {
 
         //Set our gameTimer variable to 0.
-        gameTimer = 0;
+        //TODO
 
         //Set our gameOver variable to false.
         //The game has just started, so it isn't over.
-        gameOver = false;
+        //TODO
     }
 
 
@@ -77,8 +79,12 @@ public class GameManagerScript : MonoBehaviour
          * gameTimer is keeping track of how long the game is running.
          * enemySpawnTimer is keeping track of when to spawn enemies.
          */
-        gameTimer += Time.deltaTime;
-        enemySpawnTimer += Time.deltaTime;
+
+        //gameTimer here
+        //TODO
+
+        //enemySpawnTimer here
+        //TODO
 
 
 
@@ -88,20 +94,23 @@ public class GameManagerScript : MonoBehaviour
          */
         if (enemySpawnTimer >= 2)
         {
+            //This line is a bit complicated, check the guide for an explanation!
             Instantiate(enemyPrefab, enemySpawnPositions[UnityEngine.Random.Range(0, enemySpawnPositions.Count)].transform.position, Quaternion.identity);
-            enemySpawnTimer = 0;
+
+            //Set the enemySpawnTimer back to 0
+            //TODO
         }
 
 
 
-        /* This if-statement evaluates whether 30 seconds have elapsed.
+        /* This if-statement evaluates whether 30 seconds have elapsed in the gameTimer.
          * If 30 seconds have elapsed, the player wins!
          */
-        if (gameTimer >= 30)
+        if (//TODO)
         {
             //Set the playerWins and gameOver bools to "true"
-            playerWins = true;
-            gameOver = true;
+            //TODO
+            //TODO
         }
 
 
@@ -111,13 +120,16 @@ public class GameManagerScript : MonoBehaviour
          * 1. If 30 seconds pass and the player is still alive
          * 2. If the player's health falls to 0 and they die.
          */
-        if (gameOver == true)
+
+        //Check if gameOver is true.
+        if (//TODO)
         {
             //Run the EndGame function.
-            EndGame();
+            //TODO
 
             //This if-statement evaluates whether the player has pressed the "R" key.
-            if (Input.GetKeyDown(KeyCode.R))
+            //Remember the difference between GetKey and GetKeyDown
+            if (//TODO))
             {
                 //Reload the scene using the SceneManager so the player can play again.
                 SceneManager.LoadScene("GameScene");
@@ -144,17 +156,17 @@ public class GameManagerScript : MonoBehaviour
     {
 
         //Freeze time.
-        Time.timeScale = 0;
+        //TODO
 
         //Show the game end text GameObject
-        gameEndText.gameObject.SetActive(true);
+        //TODO
 
 
         //This if-statement evaluates whether the player won.
-        if (playerWins == true) { 
+        if (//TODO) { 
 
             //change the gameEndText to say "You win!"
-            gameEndText.text = "You Win\nPress R to restart";
+            //TODO
         }
 
 
@@ -162,7 +174,7 @@ public class GameManagerScript : MonoBehaviour
         else
         {
             //change the gameEndText to say "You lose!"
-            gameEndText.text = "You Lose\nPress R to restart";
+            //TODO
         }
 
     }
