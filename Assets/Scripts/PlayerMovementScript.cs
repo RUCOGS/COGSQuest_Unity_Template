@@ -153,8 +153,7 @@ public class PlayerMovementScript : MonoBehaviour
     }
 
 
-
-
+    //<---SECTION C: CUSTOM FUNCTION--->
 
 
     /* This is a custom function. Unity gives you Start and Update and also comes with built-in ones such as GameObject.Find, GetComponent, etc.

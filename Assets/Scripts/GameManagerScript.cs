@@ -43,7 +43,7 @@ public class GameManagerScript : MonoBehaviour
     *  Instead of making individual variables, you can make a list that holds them together.
     *  You can change the contents of this list in the inspector.
     */
-    public List<GameObject> enemySpawnPositions;
+    public GameObject[] enemySpawnPositions;
     
 
     //This TMP_Text variable will hold our game over text.
